@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'level1.dart';
+import 'level2.dart';
 class PlayNow extends StatefulWidget {
   const PlayNow({super.key});
 
@@ -122,7 +123,8 @@ Widget build (BuildContext context) {
                             SizedBox(height: 20),
                             ElevatedButton(
                               onPressed:level1Complet?() {
-                                // Add your Level 2 navigation or functionality here
+                                Navigator.of(context).push(MaterialPageRoute(builder:(context)=> Level2()));
+
                               }:null,
                               child: Text('Level 2'),
                             ),
