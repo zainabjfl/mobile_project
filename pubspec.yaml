@@ -70,6 +70,16 @@ flutter:
     - lib/assets/horse.png
     - lib/assets/lion.png
     - lib/assets/cow.png
+    - lib/assets/algeria.png
+    - lib/assets/indonesia.png
+    - lib/assets/iran.png
+    - lib/assets/iraq.png
+    - lib/assets/lebanon.png
+    - lib/assets/pakistan.png
+    - lib/assets/free.png
+    - lib/assets/syria.png
+    - lib/assets/tunisia.png
+    - lib/assets/yemen.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -15,16 +15,16 @@ List<Flags> list2 = [];
 void initLevel2() {
   score = 0;
   list1 = [
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
-    Flags(capital: "Beirut", img: ""),
+    Flags(capital: "Algeria", img: "lib/assets/algeria.png"),
+    Flags(capital: "Jakarta", img: "lib/assets/indonesia.png"),
+    Flags(capital: "Tehran", img: "lib/assets/iran.png"),
+    Flags(capital: "Baghdad", img: "lib/assets/iraq.png"),
+    Flags(capital: "Beirut", img: "lib/assets/lebanon.png"),
+    Flags(capital: "Islamabad", img: "lib/assets/pakistan.png"),
+    Flags(capital: "Alludes", img: "lib/assets/free.png"),
+    Flags(capital: "Damascus", img: "lib/assets/syria.png"),
+    Flags(capital: "Tunis", img: "lib/assets/tunisia.png"),
+    Flags(capital: "Sanaa", img: "lib/assets/yemen.png"),
 
   ];
   list2 = List<Flags>.from(list1);
