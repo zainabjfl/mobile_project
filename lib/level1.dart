@@ -63,7 +63,14 @@ class _Level1State extends State<Level1> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return
+      Scaffold(
+        appBar: AppBar(
+        title: Text('Level 1',style: TextStyle(fontSize: 20,color: Colors.white),),
+    backgroundColor: Colors.yellow,
+
+    ),
+    body:Center(
       child: SingleChildScrollView(child:
       Column(
         children: [
@@ -162,6 +169,7 @@ class _Level1State extends State<Level1> {
         ],
       ),
       )
+    )
     );
   }
 }
