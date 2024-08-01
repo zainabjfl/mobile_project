@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project/level2.dart';
 import 'animal.dart';
+
 
 class Level1 extends StatefulWidget {
   const Level1({super.key});
@@ -9,28 +11,17 @@ class Level1 extends StatefulWidget {
 }
 
 int score = 0;
-List<Animal> list1 = [];
+
 List<Animal> list2 = [];
 
 void initLevel() {
   score = 0;
-  list1 = [
-    Animal(name: 'Camel', img: 'lib/assets/camel.png', voice: 'none'),
-    Animal(name: 'Cat', img: 'lib/assets/cat.png', voice: 'none'),
-    Animal(name: 'Cow', img: 'lib/assets/cow.png', voice: 'none'),
-    Animal(name: 'Dog', img: 'lib/assets/dog.png', voice: 'none'),
-    Animal(name: 'Fox', img: 'lib/assets/fox.png', voice: 'none'),
-    Animal(name: 'Hen', img: 'lib/assets/hen.png', voice: 'none'),
-    Animal(name: 'Horse', img: 'lib/assets/horse.png', voice: 'none'),
-    Animal(name: 'Lion', img: 'lib/assets/lion.png', voice: 'none'),
-    Animal(name: 'Panda', img: 'lib/assets/panda.png', voice: 'none'),
-    Animal(name: 'Sheep', img: 'lib/assets/sheep.png', voice: 'none'),
-  ];
-  list2 = List<Animal>.from(list1);
+  list2 = List<Animal>.from(list3);
 
-  list1.shuffle();
+  list3.shuffle();
   list2.shuffle();
 }
+
 
 class _Level1State extends State<Level1> {
   @override
@@ -50,7 +41,9 @@ class _Level1State extends State<Level1> {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>Level2())
+                  );
                 },
                 child: Text('OK'),
               ),
@@ -91,6 +84,7 @@ class _Level1State extends State<Level1> {
               IconButton(
                 onPressed: () {
                   initLevel();
+                  playRestart();
                   setState(() {});
                 },
                 icon: Icon(
@@ -105,7 +99,7 @@ class _Level1State extends State<Level1> {
           Row(
             children: [
               Column(
-                children: list1.map((animal1) {
+                children: list3.map((animal1) {
                   return Container(
                     child: Draggable<Animal>(
                       data: animal1,
@@ -136,12 +130,14 @@ class _Level1State extends State<Level1> {
                       Animal animal1 = details.data;
                       if (animal1.name == animal2.name) {
                         setState(() {
-                          list1.remove(animal1);
+                          list3.remove(animal1);
                           list2.remove(animal2);
                           score += 10;
                           checkScore();  // Check score after updating it
                         });
+                        platSuccess();
                       }
+
                       else {
                         setState(() {
                           score -= 5;
@@ -173,3 +169,5 @@ class _Level1State extends State<Level1> {
     );
   }
 }
+
+

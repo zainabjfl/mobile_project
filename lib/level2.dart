@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flags.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Level2 extends StatefulWidget {
   const Level2({super.key});
@@ -11,6 +12,7 @@ class Level2 extends StatefulWidget {
 int score = 0;
 List<Flags> list1 = [];
 List<Flags> list2 = [];
+final player=AudioPlayer();
 
 void initLevel2() {
   score = 0;
@@ -31,6 +33,12 @@ void initLevel2() {
 
   list1.shuffle();
   list2.shuffle();
+}
+void platSuccess()async{
+
+}
+void playRestart()async{
+
 }
 
 class _Level2State extends State<Level2> {
@@ -92,6 +100,7 @@ class _Level2State extends State<Level2> {
                 IconButton(
                   onPressed: () {
                     initLevel2();
+                    playRestart();
                     setState(() {});
                   },
                   icon: Icon(
@@ -142,6 +151,7 @@ class _Level2State extends State<Level2> {
                             score += 10;
                             checkScore();  // Check score after updating it
                           });
+                          platSuccess();
                         }
                         else {
                           setState(() {
